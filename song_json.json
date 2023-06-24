@@ -1,0 +1,92 @@
+[
+    {
+      "title": "Blinding Lights",
+      "artist": "The Weeknd",
+      "genre": [
+        "Pop",
+        "R&B"
+      ],
+      "year": 2019
+    },
+    {
+      "title": "Shape of You",
+      "artist": "Ed Sheeran",
+      "genre": [
+        "Pop",
+        "R&B"
+      ],
+      "year": 2017
+    },
+    {
+      "title": "Dance Monkey",
+      "artist": "Tones and I",
+      "genre": [
+        "Pop",
+        "Blues"
+      ],
+      "year": 2019
+    },
+    {
+      "title": "Someone You Loved",
+      "artist": "Lewis Capaldi",
+      "genre": [
+        "Pop",
+        "Rock"
+      ],
+      "year": 2018
+    },
+    {
+      "title": "Sunflower",
+      "artist": "Post Malone",
+      "genre": [
+        "Pop",
+        "Hip Hop"
+      ],
+      "year": 2018
+    },
+    {
+      "title": "Rockstar",
+      "artist": "Post Malone",
+      "genre": [
+        "Pop",
+        "Rock"
+      ],
+      "year": 2017
+    },
+    {
+      "title": "One Dance",
+      "artist": "Drake",
+      "genre": [
+        "Pop",
+        "R&B"
+      ],
+      "year": 2016
+    },
+    {
+      "title": "Stay",
+      "artist": "The Kid Laroi",
+      "genre": [
+        "Pop",
+        "Dance"
+      ],
+      "year": 2021
+    },
+    {
+      "title": "Closer",
+      "artist": "The Chainsmokers",
+      "genre": [
+        "Pop",
+        "House",
+        "Dance"
+      ],
+      "year": 2016
+    },
+    {
+      "title": "Believer",
+      "artist": "Imagine Dragons",
+      "genre": [
+        "Pop"
+      ],
+      "year": 2017
+    }
+  ]
