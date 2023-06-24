@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Json 2 Unit 2 PS3</title>
+	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"
+	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	crossorigin="anonymous"></script>
+
+	<style type="text/css">
+		li {list-style-type:none; }
+        #titles {
+            font-size: larger;
+            font-weight: bold;
+            color: #08088e;
+        }
+	</style>
+</head>
+
+<body>
+
+    <h1>Unit 2 PS3</h1>
+
+	<script language="javascript">
+	$.get( "song_json.json",
+			function( data ) {
+				console.log('raw data\n'+ data)
+				str = JSON.stringify(data);		//data is a json object
+
+
+				str = "<ul>";
+
+
+				data.forEach(function(song) {
+				    str += "<li id = 'titles'>" + song.title + "</b></li>";
+                    str += "<li> <b>Artist</b>: " + song.artist + "</li>";
+                    str += "<li> <b>Genre</b>: " + song.genre.join(", ") + "</li>";
+                    str += "<li> <b>Released</b>: " + song.year + "</li>";
+                    str += "<br>";
+				})
+	str += "</ul>";
+	document.getElementById('json-list').innerHTML = str;
+	})
+</script>
+	<div id="json-list">&nbsp;</div>
+</body>
+</html>

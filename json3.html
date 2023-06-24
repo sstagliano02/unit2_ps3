@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Json 2 Unit 2 PS3</title>
+	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"
+	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	crossorigin="anonymous"></script>
+
+	<style type="text/css">
+		li {list-style-type:none; }
+        #titles {
+            font-size: larger;
+            font-weight: bold;
+            color: #08088e;
+        }
+	</style>
+</head>
+
+<body>
+
+    <h1>Unit 2 PS3</h1>
+
+    <form action="#">
+        <label for="genre">Choose a Genre:</label>
+        <select id="genre" name="genre">
+
+        </select>
+
+
+        <input type="button" id="filter" value="Filter"/>
+
+    </form>
+
+	<div id="json-list">&nbsp;</div>
+
+    <script language="javascript">
+    $(document).ready(function(){
+        var filter_word = "All"
+
+
+        $.get( "song_json.json",
+            function( data ) {
+
+                str = JSON.stringify(data);		//data is a json object
+
+                genre_array = [];
+
+                data.forEach(function(song) {
+
+                    for (let gen_index in song.genre) {
+                        genre_array.push(song.genre[gen_index]);
+                        }
+                    })
+
+                genre_set = new Set(genre_array.sort()); //array to set to remove duplicates and sort alphabetically
+                genre_new_array = Array.from(genre_set); //back to array because sets are acting weird
+                genre_new_array.unshift("All");
+
+                let s = "";
+
+                genre_new_array.forEach(function(i) {  //add to options
+                    s += "<option>" + i + "</option>";
+                    $("#genre").html(s);
+                })
+
+
+
+                $("#filter").on("click", function() {  //why can't I name the function?
+
+                    filter_word = $("#genre").val()
+
+
+                    str = "<ul>";
+                    data.forEach(function(song) {
+
+                        song_array = [];
+                        for (let gen_index in song.genre) {
+                            song_array.push(song.genre[gen_index]);
+                        }
+
+                        if (filter_word == 'All') {
+
+                            str += "<li id = 'titles'>" + song.title + "</b></li>";
+                            str += "<li> <b>Artist</b>: " + song.artist + "</li>";
+                            str += "<li> <b>Genre</b>: " + song.genre.join(", ") + "</li>";
+                            str += "<li> <b>Released</b>: " + song.year + "</li>";
+                            str += "<br>";
+
+                        } else if (song_array.includes(filter_word)) {
+
+                            str += "<li id = 'titles'>" + song.title + "</b></li>";
+                            str += "<li> <b>Artist</b>: " + song.artist + "</li>";
+                            str += "<li> <b>Genre</b>: " + song.genre.join(", ") + "</li>";
+                            str += "<li> <b>Released</b>: " + song.year + "</li>";
+                            str += "<br>";
+                        };
+
+                    });
+
+                    str += "</ul>";
+
+                    $('#json-list').html(str);
+
+
+                })
+
+
+        })
+
+    });
+    </script>
+</body>
+</html>

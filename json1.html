@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSON 1 - Unit2 PS3</title>
+        <style>
+        </style>
+
+    <script language="javascript">
+        // JS Object
+        function Song(title,artist, genre, year)
+            {
+                this.title = title;
+                this.artist = artist;
+                this.genre = genre;
+                this.year = year;
+	}
+</script>
+</head>
+
+<body>
+
+    <h1>Unit 2__PS3</h1>
+
+	<script>
+        s1 = new Song("Blinding Lights","The Weeknd", ["Pop", "R&B"], 2019);
+
+        s2 = new Song("Shape of You","Ed Sheeran", ["Pop", "R&B"], 2017);
+
+        s3 = new Song("Dance Monkey","Tones and I", ["Pop", "Blues"], 2019);
+
+        s4 = new Song("Someone You Loved","Lewis Capaldi", ["Pop", "Rock"], 2018);
+
+        s5 = new Song("Sunflower","Post Malone", ["Pop", "Hip Hop"], 2018);
+
+        s6 = new Song("Rockstar","Post Malone", ["Pop", "Rock"], 2017);
+
+        s7 = new Song("One Dance","Drake", ["Pop", "R&B"], 2016);
+
+        s8 = new Song("Stay","The Kid Laroi", ["Pop", "Dance"], 2021);
+
+        s9 = new Song("Closer","The Chainsmokers", ["Pop", "House", "Dance"], 2016);
+
+        s10 = new Song("Believer","Imagine Dragons", ["Pop"], 2017);
+
+
+        song_array = [s1, s2, s3, s4, s5, s6,s7,s8,s9,s10]
+
+        str_arr = JSON.stringify(song_array);				//serialize the array
+
+        song_json = JSON.parse(str_arr);					//convert the array to a json
+        document.write ("json object: " + str_arr)
+
+	</script>
+</body>
+</html>
